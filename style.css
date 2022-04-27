@@ -84,7 +84,7 @@ nav .fa-solid{
         display: block;
     }
     .nav-links{
-        position: absolute;
+        position: fixed;
         background: white;
         height: 100vh;
         width: 200px;
@@ -92,7 +92,7 @@ nav .fa-solid{
         right: -200px;
         text-align: left;
         z-index: 2;
-        transition: 0.5s;
+        transition: 1s;
     }
     nav .fa-solid{
         display: block;
