@@ -55,7 +55,7 @@ nav{
 .nav-links ul li:hover::after{
     width: 100%;
 }
-.aboutMeText{
+.contactText{
     width: 90%;
     color:black;
     position: absolute;
@@ -64,11 +64,11 @@ nav{
     transform: translate(-50%,-50%);
     text-align: center;
 }
-.aboutMeText h1 {
+.contactText h1 {
     font-size: 62px;
     word-spacing: 8px;
-    background-color: #f9c1b1;
-    background-image: linear-gradient(315deg, #f9c1b1 0%, #fb8085 74%);
+    background-color: #96c8fb;
+    background-image: linear-gradient(315deg, #96c8fb 0%, #ddbdfc 74%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -85,7 +85,7 @@ nav{
   50% {background-position: right}
   100% {background-position: left}
 }
-.aboutMeText p{
+.contactText p{
     margin: 10px 0 40px;
     font-size: 14px;
 }
@@ -95,7 +95,7 @@ nav .fa-solid{
 
 
 @media(max-width: 700px){
-    .aboutMeText h1{
+    .contactText h1{
         font-size: 30px;
     }
     .logo img{
