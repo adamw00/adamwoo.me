@@ -55,85 +55,39 @@ nav{
 .nav-links ul li:hover::after{
     width: 100%;
 }
-.text-box{
+.aboutMeText{
     width: 90%;
     color:black;
     position: absolute;
-    top:50%;
+    top:25%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
 }
-.text-box h1{
+.aboutMeText h1 {
     font-size: 62px;
+    word-spacing: 8px;
+    background-color: #9e8fb2;
+    background-image: linear-gradient(315deg, #9183a3 0%, #b5bae9 75%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    background-size: 300%;
+    animation: bg-animation 8s infinite;
 }
-.text-box p{
+
+
+@keyframes bg-animation {
+  0% {background-position: left}
+  50% {background-position: right}
+  100% {background-position: left}
+}
+.aboutMeText p{
     margin: 10px 0 40px;
     font-size: 14px;
-}
-.links{
-    display: flex;
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.links ul li {
-    display: inline-block;
-    padding: 10px 0px;
-    list-style: none;
-}
-.links ul li a {
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    text-align: center;
-    line-height: 80px;
-    font-size: 35px;
-    margin: 0 10px;
-    display: block;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    border: 3px solid #fff;
-    z-index: 1;
-}
-.links ul li a .icon {
-    position: relative;
-    top: 27%;
-    color: #262626;
-    transition: .5s;
-    z-index: 3;
-}
-.links ul li a:hover .icon {
-    color: #fff;
-    transform: rotateY(360deg);
-}
-.links ul li a:before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #f00;
-    transition: .5s;
-    z-index: 2;
-}
-.links ul li a:hover:before {
-    top: 0;
-}
-.links ul li:nth-child(1) a:before{
-    background: #333333;
-}
-.links ul li:nth-child(2) a:before{
-    background: #55acee;
-}
-.links ul li:nth-child(3) a:before {
-    background: #0077b5;
-}
-.links ul li:nth-child(4) a:before {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 nav .fa-solid{
     display: none;
@@ -141,7 +95,7 @@ nav .fa-solid{
 
 
 @media(max-width: 700px){
-    .text-box h1{
+    .aboutMeText h1{
         font-size: 30px;
     }
     .logo img{
@@ -176,20 +130,5 @@ nav .fa-solid{
     }
     .nav-links ul{
         padding: 30px;
-    }
-    .links ul li a {
-        width: 50px;
-        height: 50px;
-        background-color: #fff;
-        text-align: center;
-        line-height: 80px;
-        font-size: 24px;
-        margin: 0 10px;
-        display: block;
-        border-radius: 50%;
-        position: relative;
-        overflow: hidden;
-        border: 3px solid #fff;
-        z-index: 1;
     }
 }
