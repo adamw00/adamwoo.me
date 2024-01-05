@@ -13,6 +13,7 @@
 body {
   font-family: "Work Sans", sans-serif;
   background-color: black;
+  z-index: 0;
 }
 
 body:has(.card[data-color="blue"]:hover) {
@@ -186,4 +187,33 @@ body:has(.card[data-color="green"]:hover) {
 
 .textShadow {
   text-shadow: #FC0 1px 0 10px;
+}
+
+.aboutMeText{
+  width: 50%;
+  color:white;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+}
+.aboutMeText h1 {
+  font-size: 62px;
+  font-weight: 900;
+  word-spacing: 8px;
+  background-color: #f9c1b1;
+  background-image: linear-gradient(315deg, #f9c1b1 0%, #fb8085 74%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  background-size: 300%;
+  animation: bg-animation 8s infinite;
+}
+
+@keyframes bg-animation {
+  0% {background-position: left}
+  50% {background-position: right}
+  100% {background-position: left}
 }
