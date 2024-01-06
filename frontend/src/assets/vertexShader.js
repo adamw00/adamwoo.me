@@ -1,6 +1,7 @@
 const vertexShader = `
 uniform float u_intensity;
 uniform float u_time;
+uniform float u_opacity;
 
 varying vec2 vUv;
 varying float vDisplacement;

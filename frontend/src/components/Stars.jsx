@@ -1,6 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Points, PointMaterial, Sphere } from '@react-three/drei'
+import { useNavigate,useLocation } from 'react-router'
 
 export default function Stars(props) {
     const ref = useRef()
@@ -13,6 +14,15 @@ export default function Stars(props) {
       }
       return sphere;
     };
+    const [nav, setNav] = useState(0);
+    useEffect(() => {
+        if (location.pathname !== "/" && nav==1) {
+            navigate("/");
+            console.log("ROUTING");
+            setNav(0);
+        }
+    }, [nav])
+    
     
     const [sphere] = useState(generateSpherePoints);
   //   useFrame((s, delta) => {
@@ -25,12 +35,18 @@ export default function Stars(props) {
       ref.current.rotation.x +=y;
       ref.current.rotation.y -=x;
     })
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const handleClick = () => {
+        setNav(1);
+    }
   
     return (
-      <group rotation={[0, 0, 0]} >
-        <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
-          <PointMaterial transparent color={props.color} size={0.005} sizeAttenuation={true} depthWrite={false} />
+      <mesh rotation={[0, 0, 0]} onClick={handleClick}>
+        <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props} >
+          <PointMaterial transparent color={props.color} size={0.005} sizeAttenuation={true} depthWrite={false}/>
         </Points>
-      </group>
+      </mesh>
     )
   }
